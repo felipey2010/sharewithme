@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "../css/home.css";
-import Data from "../data/data.json";
+import SiteText from "../data/SiteText.json";
 import Modal from "../components/Modal";
 import Slide from "react-reveal/Slide";
 
@@ -44,17 +44,23 @@ export default function Home() {
 
       <div className="main-container">
         <Slide top>
-          <h4>{siteLanguage === "English" ? Data[0].en : Data[0]["pt-br"]}</h4>
+          <h4>
+            {siteLanguage === "English" ? SiteText[0].en : SiteText[0]["pt-br"]}
+          </h4>
         </Slide>
         <Slide bottom>
           <button onClick={() => handleModal()}>
-            {siteLanguage === "English" ? Data[1].en : Data[1]["pt-br"]}
+            {siteLanguage === "English" ? SiteText[1].en : SiteText[1]["pt-br"]}
           </button>
         </Slide>
       </div>
       {openModal && (
         <div className="modal-container">
-          <Modal openModal={openModal} setOpenModal={setOpenModal} />
+          <Modal
+            openModal={openModal}
+            setOpenModal={setOpenModal}
+            siteLanguage={siteLanguage}
+          />
         </div>
       )}
     </div>
