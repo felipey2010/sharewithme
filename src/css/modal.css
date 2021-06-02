@@ -81,8 +81,17 @@
 
 .modal-component-content-main-input span {
   position: relative;
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   margin: 30px 10px;
+}
+
+.span-input {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .clean-slide {

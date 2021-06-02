@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "../css/home.css";
 import SiteText from "../data/SiteText.json";
-import Modal from "../components/Modal";
+import SignIn from "../components/signin/SignIn";
 import Slide from "react-reveal/Slide";
 
 export default function Home() {
@@ -56,7 +56,7 @@ export default function Home() {
       </div>
       {openModal && (
         <div className="modal-container">
-          <Modal
+          <SignIn
             openModal={openModal}
             setOpenModal={setOpenModal}
             siteLanguage={siteLanguage}
@@ -66,3 +66,13 @@ export default function Home() {
     </div>
   );
 }
+
+/*
+The idea behind this project
+1) Ability to create account
+2) Send dedicated links for friends to send music links
+3) Suggest for visitors to create their own link
+
+
+url - .../language/user_id
+ */

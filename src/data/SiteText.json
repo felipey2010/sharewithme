@@ -1,22 +1,28 @@
 [
   {
+    "id": 0,
+    "pt-br": "Crie sua conta e gere seu link para seus amigos enviarem suas músicas favoritas",
+    "en": "Create your account and generate your link for your friends to send their favorite songs"
+  },
+  { "id": 1, "pt-br": "Vamos lá!", "en": "Let's go!" },
+  {
+    "id": 2,
+    "pt-br": "Por favor, informe seu e-mail",
+    "en": "Please, type your e-mail"
+  },
+  {
+    "id": 3,
+    "pt-br": "Por favor, informe sua senha",
+    "en": "Please, type your password"
+  },
+  { "id": 4, "pt-br": "Continuar", "en": "Continue" },
+  { "id": 5, "pt-br": "email aqui", "en": "email here" },
+  { "id": 6, "pt-br": "senha aqui", "en": "password here" },
+  { "id": 7, "pt-br": "Entrar", "en": "Enter" },
+  { "id": 8, "pt-br": "Cadastrar", "en": "Register" },
+  {
+    "id": 9,
     "pt-br": "Seu gosto musical pode ser diferente do meu. Se você não se importa, por que não compartilha comigo?",
     "en": "Your taste of music may be different from mine. If you don't mind, why not share with me?"
-  },
-  {
-    "pt-br": "Vamos lá!",
-    "en": "Let's go!"
-  },
-  {
-    "pt-br": "Por favor, copie e cole o link",
-    "en": "Please, copy and paste the link"
-  },
-  {
-    "pt-br": "Enviar",
-    "en": "Send"
-  },
-  {
-    "pt-br": "cole aqui",
-    "en": "paste here"
   }
 ]

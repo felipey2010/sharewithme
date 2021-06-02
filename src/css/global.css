@@ -70,7 +70,7 @@ body {
   width: 100%;
   background-color: var(--color-default);
   min-height: 100vh;
-  background: url(../images/bg_site.jpg);
+  background-image: url(../images/bg_global.webp);
   background-size: cover;
   background-repeat: no-repeat;
 }
