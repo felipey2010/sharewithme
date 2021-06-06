@@ -72,10 +72,10 @@ export default function SignInContent({
                   placeholder={SiteText[6].en}
                 />
               )}
-              <Fade left opposite collapse when={loading}>
-                <ScaleLoader color="#36ba9b" loading={loading} size={15} />
-              </Fade>
             </span>
+            {loading && (
+              <ScaleLoader color="#36ba9b" loading={loading} size={15} />
+            )}
           </div>
           <Fade left opposite collapse when={showEmail}>
             <button onClick={() => handleCounter()}>{SiteText[4].en}</button>
@@ -112,8 +112,10 @@ export default function SignInContent({
                   placeholder={SiteText[6]["pt-br"]}
                 />
               )}
-              <ScaleLoader color="#36ba9b" loading={loading} size={15} />
             </span>
+            {loading && (
+              <ScaleLoader color="#36ba9b" loading={loading} size={15} />
+            )}
           </div>
           <Fade left opposite collapse when={showEmail}>
             <button onClick={() => handleCounter()}>
