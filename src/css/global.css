@@ -57,6 +57,11 @@
   --index-menu: 3;
   --index-modal: 4;
   --area-box: 10px;
+
+  /* Typewriter Animation parameters */
+  --animation-bg-color: #121212;
+  --typewriterSpeed: 6s;
+  --typewriterCharacters: 20;
 }
 
 body {

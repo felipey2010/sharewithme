@@ -24,5 +24,15 @@
     "id": 9,
     "pt-br": "Seu gosto musical pode ser diferente do meu. Se você não se importa, por que não compartilha comigo?",
     "en": "Your taste of music may be different from mine. If you don't mind, why not share with me?"
+  },
+  {
+    "id": 10,
+    "pt-br": "Acessar Painel de Controle",
+    "en": "Access Dashboard"
+  },
+  {
+    "id": 11,
+    "pt-br": "Por favor, espere",
+    "en": "Please wait..."
   }
 ]

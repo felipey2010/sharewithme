@@ -130,8 +130,9 @@
 
 .clean-slide:focus,
 .clean-slide:active {
-  color: #377d6a;
+  color: #000000;
   text-indent: 0;
+  font-size: 1.2em;
   background: #fff;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;

@@ -1,21 +1,14 @@
 import { useState, useEffect } from "react";
 import "../css/home.css";
-import SiteText from "../data/SiteText.json";
-import SignIn from "../components/signin/SignIn";
-import Slide from "react-reveal/Slide";
+// import SiteText from "../data/SiteText.json";
+import TranslatorComponent from "../components/translationComponent";
+import SignatureComponent from "../components/signatureComponent";
+import HomeMainComponent from "../components/homeMainComponent";
+import HomeSignedInComponent from "../components/homeSignedInComponent";
 
 export default function Home() {
   const [siteLanguage, setSiteLanguage] = useState("");
-  const [openModal, setOpenModal] = useState(false);
-
-  async function handleLanguage(value) {
-    setSiteLanguage(value);
-    localStorage.setItem("@sharewithme/language", value);
-  }
-
-  function handleModal() {
-    setOpenModal(!openModal);
-  }
+  const [signedIn, setSignedIn] = useState(false);
 
   useEffect(() => {
     let language = localStorage.getItem("@sharewithme/language");
@@ -30,39 +23,23 @@ export default function Home() {
   return (
     <div className="home-container">
       <div className="top-container">
-        <div className="right-container">
-          <select
-            name="languages"
-            id="languages"
-            value={siteLanguage}
-            onChange={e => handleLanguage(e.target.value)}>
-            <option value="English">English</option>
-            <option value="Português">Português</option>
-          </select>
-        </div>
+        <TranslatorComponent
+          siteLanguage={siteLanguage}
+          setSiteLanguage={setSiteLanguage}
+        />
       </div>
 
-      <div className="main-container">
-        <Slide top>
-          <h4>
-            {siteLanguage === "English" ? SiteText[0].en : SiteText[0]["pt-br"]}
-          </h4>
-        </Slide>
-        <Slide bottom>
-          <button onClick={() => handleModal()}>
-            {siteLanguage === "English" ? SiteText[1].en : SiteText[1]["pt-br"]}
-          </button>
-        </Slide>
-      </div>
-      {openModal && (
-        <div className="modal-container">
-          <SignIn
-            openModal={openModal}
-            setOpenModal={setOpenModal}
-            siteLanguage={siteLanguage}
-          />
-        </div>
+      {signedIn ? (
+        <HomeSignedInComponent />
+      ) : (
+        <HomeMainComponent
+          siteLanguage={siteLanguage}
+          signedIn={signedIn}
+          setSignedIn={setSignedIn}
+        />
       )}
+
+      <SignatureComponent />
     </div>
   );
 }
@@ -75,4 +52,10 @@ The idea behind this project
 
 
 url - .../language/user_id
+
+implement this cool typewriter effect
+https://www.youtube.com/watch?v=w1nhwUGsG6M
+
+React-Spinners
+https://www.npmjs.com/package/react-spinners
  */

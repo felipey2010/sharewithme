@@ -4,7 +4,13 @@ import closeBtn from "../../images/close.png";
 import Fade from "react-reveal/Fade";
 import SignInContent from "./SignInContent";
 
-export default function SignIn({ openModal, setOpenModal, siteLanguage }) {
+export default function SignIn({
+  openModal,
+  setOpenModal,
+  siteLanguage,
+  signedIn,
+  setSignedIn,
+}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -27,6 +33,8 @@ export default function SignIn({ openModal, setOpenModal, siteLanguage }) {
               setPassword={setPassword}
               siteLanguage={siteLanguage}
               setOpenModal={setOpenModal}
+              signedIn={signedIn}
+              setSignedIn={setSignedIn}
             />
           </div>
         </div>
