@@ -90,9 +90,10 @@ body {
 }
 
 .signature {
-  position: absolute;
-  bottom: 2px;
-  left: 12px;
+  position: static;
+  /* bottom: 2px;
+  left: 12px; */
+  padding-left: 12px;
   color: white;
 }
 

@@ -1,7 +1,13 @@
-export default function SignatureComponent() {
+import SiteText from "../data/SiteText.json";
+
+export default function SignatureComponent({ siteLanguage }) {
   return (
     <div className="signature">
-      <h5>Created by: Felipey.</h5>
+      {siteLanguage === "English" ? (
+        <h5>Created by: Felipey.</h5>
+      ) : (
+        <h5>Criado por: Felipey.</h5>
+      )}
     </div>
   );
 }

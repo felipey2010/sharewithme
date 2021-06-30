@@ -71,7 +71,7 @@ export default function Login() {
           )}
         </div>
       </div>
-      <SignatureComponent />
+      <SignatureComponent siteLanguage={siteLanguage} />
     </>
   );
 }
