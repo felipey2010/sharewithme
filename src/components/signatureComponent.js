@@ -1,5 +1,3 @@
-import SiteText from "../data/SiteText.json";
-
 export default function SignatureComponent({ siteLanguage }) {
   return (
     <div className="signature">
