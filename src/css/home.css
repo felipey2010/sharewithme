@@ -19,6 +19,7 @@
   height: 100%;
   width: 100px;
   margin-right: 12px;
+  z-index: 1000;
 }
 
 .main-container {
@@ -101,13 +102,15 @@ h5::after {
 
 h5::before {
   background: var(--animation-bg-color);
-  animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards;
+  animation: typewriter var(--typewriterSpeed)
+    steps(var(--typewriterCharacters)) 1s forwards;
 }
 
 h5::after {
   width: 0.125em;
   background: white;
-  animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards,
+  animation: typewriter var(--typewriterSpeed)
+      steps(var(--typewriterCharacters)) 1s forwards,
     blink 750ms steps(var(--typewriterCharacters)) infinite;
 }
 

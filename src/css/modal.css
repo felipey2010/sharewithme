@@ -138,6 +138,20 @@
   border-bottom-left-radius: 0;
 }
 
+.modal-component-content-main-register {
+  position: absolute;
+  bottom: 8px;
+}
+
+.modal-component-content-main-register p {
+  cursor: pointer;
+}
+
+.modal-component-content-main-register p:hover {
+  color: var(--color-green);
+  transition: color 0.2s ease-in;
+}
+
 @media (max-width: 800px) {
   .modal-component {
     width: 85vw;

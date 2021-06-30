@@ -79,3 +79,73 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.top-container {
+  width: 100vw;
+  height: 7vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.signature {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  color: white;
+}
+
+.right-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  width: 100px;
+  margin-right: 12px;
+  z-index: 1000;
+}
+
+h5 {
+  width: max-content;
+  height: max-content;
+  position: relative;
+  font-size: 16px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+h5::before,
+h5::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+h5::before {
+  background: var(--animation-bg-color);
+  animation: typewriter var(--typewriterSpeed)
+    steps(var(--typewriterCharacters)) 1s forwards;
+}
+
+h5::after {
+  width: 0.125em;
+  background: white;
+  animation: typewriter var(--typewriterSpeed)
+      steps(var(--typewriterCharacters)) 1s forwards,
+    blink 750ms steps(var(--typewriterCharacters)) infinite;
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}

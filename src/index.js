@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Home from "./pages/Home";
+import LoginPage from "./pages/Login";
 import "./css/global.css";
 
 ReactDOM.render(
   <>
-    <Home />
+    <LoginPage />
   </>,
   document.getElementById("root")
 );

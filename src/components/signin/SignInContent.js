@@ -17,11 +17,17 @@ export default function SignInContent({
   const [showEmail, setShowEmail] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [auth, setAuth] = useState(false);
 
-  function delay() {
+  function delay(value) {
     const timer = setTimeout(() => {
-      setShowPassword(true);
-    }, 700);
+      if (value === 1) setShowPassword(true);
+
+      if (value === 2) {
+        setLoading(false);
+        setAuth(true);
+      }
+    }, 1500);
 
     return () => clearTimeout(timer);
   }
@@ -31,8 +37,8 @@ export default function SignInContent({
       setCounter(counter + 1);
       setShowEmail(false);
       setLoading(false);
+      delay(1);
       setShowPassword(true);
-      delay();
     }
     if (counter === 1 && password.length !== 0) {
       setCounter(counter + 1);
@@ -42,9 +48,20 @@ export default function SignInContent({
     }
   }
 
+  async function handleAuthenticate() {
+    handleCounter();
+
+    if (email === "admin@admin.com" && password === "admin") {
+      delay(2);
+    } else {
+      setCounter(0);
+    }
+  }
+
   return (
     <div className="modal-component-content">
       {siteLanguage === "English" ? (
+        // English Version
         <div className="modal-component-content-main">
           {showEmail && <h2>{SiteText[2].en}</h2>}
           {showPassword && <h2>{SiteText[3].en}</h2>}
@@ -76,15 +93,24 @@ export default function SignInContent({
             {loading && (
               <ScaleLoader color="#36ba9b" loading={loading} size={15} />
             )}
+
+            {auth && <h2>Authenticated</h2>}
           </div>
           <Fade left opposite collapse when={showEmail}>
             <button onClick={() => handleCounter()}>{SiteText[4].en}</button>
           </Fade>
           <Fade left opposite when={showPassword}>
-            <button onClick={() => handleCounter()}>{SiteText[7].en}</button>
+            <button onClick={() => handleAuthenticate()}>
+              {SiteText[7].en}
+            </button>
           </Fade>
+
+          <div className="modal-component-content-main-register">
+            <p>{SiteText[12].en}</p>
+          </div>
         </div>
       ) : (
+        // Portuguese Version
         <div className="modal-component-content-main">
           {showEmail && <h2>{SiteText[2]["pt-br"]}</h2>}
           {showPassword && <h2>{SiteText[3]["pt-br"]}</h2>}
@@ -123,10 +149,14 @@ export default function SignInContent({
             </button>
           </Fade>
           <Fade left opposite when={showPassword}>
-            <button onClick={() => handleCounter()}>
+            <button onClick={() => handleAuthenticate()}>
               {SiteText[7]["pt-br"]}
             </button>
           </Fade>
+
+          <div className="modal-component-content-main-register">
+            <p>{SiteText[12]["pt-br"]}</p>
+          </div>
         </div>
       )}
     </div>

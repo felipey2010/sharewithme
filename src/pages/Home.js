@@ -9,8 +9,10 @@ import HomeSignedInComponent from "../components/homeSignedInComponent";
 export default function Home() {
   const [siteLanguage, setSiteLanguage] = useState("");
   const [signedIn, setSignedIn] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
 
-  useEffect(() => {
+  function loadLanguage() {
     let language = localStorage.getItem("@sharewithme/language");
 
     if (language != null) {
@@ -18,6 +20,23 @@ export default function Home() {
     } else {
       setSiteLanguage("English");
     }
+  }
+
+  function checkLoginState() {
+    const timer = setTimeout(() => {
+      if (!loggedIn) {
+        setOpenModal(true);
+        setLoggedIn(false);
+      }
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }
+
+  useEffect(() => {
+    loadLanguage();
+
+    checkLoginState();
   }, []);
 
   return (
@@ -36,6 +55,8 @@ export default function Home() {
           siteLanguage={siteLanguage}
           signedIn={signedIn}
           setSignedIn={setSignedIn}
+          openModal={openModal}
+          setOpenModal={setOpenModal}
         />
       )}
 

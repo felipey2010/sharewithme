@@ -34,5 +34,30 @@
     "id": 11,
     "pt-br": "Por favor, espere",
     "en": "Please wait..."
+  },
+  {
+    "id": 12,
+    "pt-br": "Criar Conta",
+    "en": "Create Account"
+  },
+  {
+    "id": 13,
+    "pt-br": "Criar Conta",
+    "en": "Sign Up"
+  },
+  {
+    "id": 14,
+    "pt-br": "E-mail/senha inválido",
+    "en": "Invalid e-mail or password"
+  },
+  {
+    "id": 15,
+    "pt-br": "nome do usuário",
+    "en": "username"
+  },
+  {
+    "id": 16,
+    "pt-br": "confirmar senha",
+    "en": "confirm password"
   }
 ]

@@ -7,9 +7,9 @@ export default function HomeMainComponent({
   siteLanguage,
   signedIn,
   setSignedIn,
+  openModal,
+  setOpenModal,
 }) {
-  const [openModal, setOpenModal] = useState(false);
-
   function handleModal() {
     setOpenModal(!openModal);
   }

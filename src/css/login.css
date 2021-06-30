@@ -1,0 +1,93 @@
+.login-container {
+  width: 100vw;
+  height: 93vh;
+  font-size: 14px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-title {
+  width: 35vw;
+  background: #46464666;
+  text-align: center;
+  height: 26px;
+  box-shadow: 0px 0px 5px 2px var(--color-green);
+  border-radius: 12px 12px 0px 0px;
+}
+
+.error-container {
+  color: aqua;
+}
+
+.sign-in-form {
+  position: relative;
+  width: 35vw;
+  height: 385px;
+  background: #46464666;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sign-in-form input {
+  margin: 8px;
+  width: 70%;
+  padding: 6px;
+  text-align: center;
+  border: none;
+  background: #ffffffd1;
+  outline: none;
+}
+
+.sign-in-form button {
+  margin-top: 8px;
+  height: 29px;
+  width: fit-content;
+  background: var(--color-green);
+  border: none;
+  cursor: pointer;
+}
+.sign-in-form button:hover {
+  background: #a1f1de;
+  transition: color 0.3s;
+}
+
+.sign-in-form span {
+  color: var(--color-green);
+  cursor: pointer;
+}
+
+.sign-in-form span:hover {
+  color: #a1f1de;
+  transition: color 0.3s;
+}
+
+.sign-in-form p {
+  position: absolute;
+  bottom: 20px;
+  left: 64px;
+}
+
+@media (max-width: 700px) {
+  .form-title {
+    width: 70vw;
+  }
+
+  .sign-in-form {
+    width: 70vw;
+  }
+
+  .sign-in-form span {
+    bottom: 16px;
+    left: 38px;
+  }
+
+  .sign-in-form p {
+    bottom: 16px;
+    left: 38px;
+  }
+}
